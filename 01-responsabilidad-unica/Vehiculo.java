@@ -1,7 +1,7 @@
-public class Vehiculo implements ServicioParqueadero {
+public abstract class Vehiculo implements ServicioParqueadero { // Paso
     protected String placa;
     protected String propietario;
-    protected String tipo;              // "MENSUAL" o "MINUTOS"
+    protected String tipo;              // "MENSUAL", "MINUTOS", "DIA", etc. // Paso
     protected double valorMensualidad;
     protected double tarifaMinuto;
     protected int minutos;
@@ -17,19 +17,21 @@ public class Vehiculo implements ServicioParqueadero {
         this.minutos = minutos;
     }
 
-    public String getPlaca()            { return placa; }
-    public String getPropietario()      { return propietario; }
-    public String getTipo()             { return tipo; }
+    public String getPlaca() { return placa; }
+    public String getPropietario() { return propietario; }
+    public String getTipo() { return tipo; }
     public double getValorMensualidad() { return valorMensualidad; }
-    public double getTarifaMinuto()     { return tarifaMinuto; }
-    public int getMinutos()             { return minutos; }
+    public double getTarifaMinuto() { return tarifaMinuto; }
+    public int getMinutos() { return minutos; }
 
-    // Puntos del programa de fidelidad: 1 punto por cada $10.000 de mensualidad.
+    // Método abstracto para que cada tipo calcule su valor // Paso
+    public abstract double calcularCobro(); // Paso
+
     public int calcularPuntos() {
         return (int) (valorMensualidad / 10000);
     }
 
     public void registrarMinutos(int minutos) { this.minutos += minutos; }
-    public double calcularSeguro()            { return valorMensualidad * 0.02; }
+    public double calcularSeguro() { return valorMensualidad * 0.02; }
     public void solicitarLavados(int cantidad) { this.lavados += cantidad; }
 }
