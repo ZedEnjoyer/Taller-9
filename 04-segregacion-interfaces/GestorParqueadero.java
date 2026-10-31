@@ -1,9 +1,13 @@
 import java.util.List;
 
 public class GestorParqueadero {
-    private RepositorioMySQL repositorio = new RepositorioMySQL();
+    private RepositorioParqueadero repositorio; 
     private ExportadorCSV exportadorCSV = new ExportadorCSV();
     private ServicioNotificacion servicioNotificacion = new ServicioNotificacion();
+
+    public GestorParqueadero(RepositorioParqueadero repositorio) { 
+        this.repositorio = repositorio; 
+    } 
 
     public double calcularCobro(Vehiculo v) {
         return v.calcularCobro();

@@ -9,7 +9,9 @@ public class Main {
         vehiculos.add(new Bicicleta("BIC-07", "Valentina Díaz", 40000));
         vehiculos.add(new VehiculoPorDia("QWE987", "Carlos Pérez", 25000, 3));
 
-        GestorParqueadero gestor = new GestorParqueadero();
+        RepositorioParqueadero repoPrueba = new RepositorioEnMemoria();
+        GestorParqueadero gestor = new GestorParqueadero(repoPrueba);
+
         for (Vehiculo v : vehiculos) {
             gestor.cerrarMes(v);
 
@@ -17,9 +19,10 @@ public class Main {
                 AcumulaPuntos ap = (AcumulaPuntos) v;
                 System.out.println("Puntos acumulados para " + v.getPlaca() + ": " + ap.calcularPuntos());
             }
+
             if (v instanceof ConSeguro) {
                 ConSeguro cs = (ConSeguro) v;
-                System.out.println("Seguro de " + v.getPlaca() + ": $" + cs.calcularSeguro()); 
+                System.out.println("Seguro de " + v.getPlaca() + ": $" + cs.calcularSeguro());
             }
         }
 
