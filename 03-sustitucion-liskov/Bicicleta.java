@@ -1,0 +1,12 @@
+public class Bicicleta extends Vehiculo {
+    public Bicicleta(String codigo, String propietario, double valorMensualidad) {
+        super(codigo, propietario, "MENSUAL", valorMensualidad, 0, 0);
+    }
+
+    @Override
+    public double calcularCobro() {
+        return valorMensualidad;
+    }
+
+    // Paso: Se elimina la sobreescritura de calcularPuntos() que lanzaba UnsupportedOperationException
+}
