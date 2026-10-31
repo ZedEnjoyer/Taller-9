@@ -2,11 +2,15 @@ import java.util.List;
 
 public class GestorParqueadero {
     private RepositorioMySQL repositorio = new RepositorioMySQL();
-    private ExportadorCSV exportadorCSV = new ExportadorCSV();
-    private ServicioNotificacion servicioNotificacion = new ServicioNotificacion();
+    private ExportadorCSV exportadorCSV = new ExportadorCSV(); // Paso
+    private ServicioNotificacion servicioNotificacion = new ServicioNotificacion(); // Paso
 
     public double calcularCobro(Vehiculo v) {
-        return v.calcularCobro(); // Paso: Se elimina el switch y se delega el cálculo al polimorfismo
+        switch (v.getTipo()) {
+            case "MENSUAL": return v.getValorMensualidad();
+            case "MINUTOS": return v.getMinutos() * v.getTarifaMinuto();
+            default: throw new IllegalArgumentException("Tipo desconocido: " + v.getTipo());
+        }
     }
 
     public void guardar(Vehiculo v, double cobro) {
@@ -14,8 +18,8 @@ public class GestorParqueadero {
     }
 
     public void cerrarMes(Vehiculo v) {
-        double cobro = calcularCobro(v);
-        guardar(v, cobro);
+        double cobro = calcularCobro(v); 
+        guardar(v, cobro); // Paso
         servicioNotificacion.enviarRecibo(v, cobro);
     }
 
