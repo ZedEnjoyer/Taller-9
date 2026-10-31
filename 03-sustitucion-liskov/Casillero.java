@@ -1,4 +1,3 @@
-// Casillero para guardar cascos y maletas. Se cobra por minuto de uso.
 public class Casillero implements ServicioParqueadero {
     private String codigo;
     private String usuario;
@@ -14,11 +13,10 @@ public class Casillero implements ServicioParqueadero {
     public void registrarMinutos(int minutos) { this.minutos += minutos; }
 
     public double calcularSeguro() {
-        return 0;   // un casillero no tiene póliza de seguro
+        return 0;
     }
 
     public void solicitarLavados(int cantidad) {
-        // a un casillero no se le hace lavado
     }
 
     public double valorAlquiler() { return minutos * tarifaMinuto; }

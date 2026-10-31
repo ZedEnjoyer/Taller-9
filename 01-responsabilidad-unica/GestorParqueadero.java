@@ -2,8 +2,8 @@ import java.util.List;
 
 public class GestorParqueadero {
     private RepositorioMySQL repositorio = new RepositorioMySQL();
-    private ExportadorCSV exportadorCSV = new ExportadorCSV(); // Paso
-    private ServicioNotificacion servicioNotificacion = new ServicioNotificacion(); // Paso
+    private ExportadorCSV exportadorCSV = new ExportadorCSV();
+    private ServicioNotificacion servicioNotificacion = new ServicioNotificacion();
 
     public double calcularCobro(Vehiculo v) {
         switch (v.getTipo()) {
@@ -19,7 +19,7 @@ public class GestorParqueadero {
 
     public void cerrarMes(Vehiculo v) {
         double cobro = calcularCobro(v); 
-        guardar(v, cobro); // Paso
+        guardar(v, cobro);
         servicioNotificacion.enviarRecibo(v, cobro);
     }
 

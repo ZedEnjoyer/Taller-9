@@ -26,8 +26,6 @@ public abstract class Vehiculo implements ServicioParqueadero {
 
     public abstract double calcularCobro();
 
-    // Paso: Se remueve el método calcularPuntos() de Vehiculo para cumplir LSP
-
     public void registrarMinutos(int minutos) { this.minutos += minutos; }
     public double calcularSeguro() { return valorMensualidad * 0.02; }
     public void solicitarLavados(int cantidad) { this.lavados += cantidad; }

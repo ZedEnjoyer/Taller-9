@@ -6,7 +6,7 @@ public class GestorParqueadero {
     private ServicioNotificacion servicioNotificacion = new ServicioNotificacion();
 
     public double calcularCobro(Vehiculo v) {
-        return v.calcularCobro(); // Paso: Se elimina el switch y se delega el cálculo al polimorfismo
+        return v.calcularCobro();
     }
 
     public void guardar(Vehiculo v, double cobro) {

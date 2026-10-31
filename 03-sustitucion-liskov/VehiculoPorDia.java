@@ -1,15 +1,15 @@
-public class VehiculoPorDia extends Vehiculo { // Paso
-    private int dias; // Paso
-    private double tarifaDia; // Paso
+public class VehiculoPorDia extends Vehiculo { 
+    private int dias; 
+    private double tarifaDia; 
 
-    public VehiculoPorDia(String placa, String propietario, double tarifaDia, int dias) { // Paso
-        super(placa, propietario, "DIA", 0, 0, 0); // Paso
-        this.tarifaDia = tarifaDia; // Paso
-        this.dias = dias; // Paso
-    } // Paso
+    public VehiculoPorDia(String placa, String propietario, double tarifaDia, int dias) { 
+        super(placa, propietario, "DIA", 0, 0, 0); 
+        this.tarifaDia = tarifaDia;
+        this.dias = dias; 
+    } 
 
-    @Override // Paso
-    public double calcularCobro() { // Paso
-        return dias * tarifaDia; // Paso
-    } // Paso
-} // Paso
+    @Override
+    public double calcularCobro() {
+        return dias * tarifaDia;
+    }
+} 

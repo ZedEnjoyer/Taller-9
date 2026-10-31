@@ -7,6 +7,4 @@ public class Bicicleta extends Vehiculo {
     public double calcularCobro() {
         return valorMensualidad;
     }
-
-    // Paso: Se elimina la sobreescritura de calcularPuntos() que lanzaba UnsupportedOperationException
 }

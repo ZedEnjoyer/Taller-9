@@ -10,7 +10,7 @@ public class Casillero implements ConMinutos {
         this.tarifaMinuto = tarifaMinuto;
     }
 
-    @Override // Paso
+    @Override
     public void registrarMinutos(int minutos) { this.minutos += minutos; }
 
     public double valorAlquiler() { return minutos * tarifaMinuto; }

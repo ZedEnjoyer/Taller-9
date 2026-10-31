@@ -1,7 +1,7 @@
-public abstract class Vehiculo implements ServicioParqueadero { // Paso
+public abstract class Vehiculo implements ServicioParqueadero {
     protected String placa;
     protected String propietario;
-    protected String tipo;              // "MENSUAL", "MINUTOS", "DIA", etc. // Paso
+    protected String tipo;
     protected double valorMensualidad;
     protected double tarifaMinuto;
     protected int minutos;
@@ -24,8 +24,8 @@ public abstract class Vehiculo implements ServicioParqueadero { // Paso
     public double getTarifaMinuto() { return tarifaMinuto; }
     public int getMinutos() { return minutos; }
 
-    // Método abstracto para que cada tipo calcule su valor // Paso
-    public abstract double calcularCobro(); // Paso
+
+    public abstract double calcularCobro();
 
     public int calcularPuntos() {
         return (int) (valorMensualidad / 10000);

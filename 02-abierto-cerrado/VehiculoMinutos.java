@@ -1,10 +1,10 @@
-public class VehiculoMinutos extends Vehiculo { // Paso
-    public VehiculoMinutos(String placa, String propietario, double tarifaMinuto, int minutos) { // Paso
-        super(placa, propietario, "MINUTOS", 0, tarifaMinuto, minutos); // Paso
-    } // Paso
+public class VehiculoMinutos extends Vehiculo {
+    public VehiculoMinutos(String placa, String propietario, double tarifaMinuto, int minutos) {
+        super(placa, propietario, "MINUTOS", 0, tarifaMinuto, minutos); 
+    } 
 
-    @Override // Paso
-    public double calcularCobro() { // Paso
-        return minutos * tarifaMinuto; // Paso
-    } // Paso
-} // Paso
+    @Override 
+    public double calcularCobro() { 
+        return minutos * tarifaMinuto; 
+    } 
+} 

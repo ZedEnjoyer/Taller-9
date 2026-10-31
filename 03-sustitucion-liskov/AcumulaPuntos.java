@@ -1,3 +1,3 @@
-public interface AcumulaPuntos { // Paso
-    int calcularPuntos(); // Paso
-} // Paso
+public interface AcumulaPuntos { 
+    int calcularPuntos(); 
+}

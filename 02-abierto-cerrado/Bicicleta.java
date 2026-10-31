@@ -3,10 +3,10 @@ public class Bicicleta extends Vehiculo {
         super(codigo, propietario, "MENSUAL", valorMensualidad, 0, 0);
     }
 
-    @Override // Paso
-    public double calcularCobro() { // Paso
-        return valorMensualidad; // Paso
-    } // Paso
+    @Override
+    public double calcularCobro() {
+        return valorMensualidad;
+    }
 
     @Override
     public int calcularPuntos() {

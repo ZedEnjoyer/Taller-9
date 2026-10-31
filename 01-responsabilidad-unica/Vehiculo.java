@@ -1,7 +1,7 @@
 public class Vehiculo implements ServicioParqueadero {
     protected String placa;
     protected String propietario;
-    protected String tipo;              // "MENSUAL" o "MINUTOS"
+    protected String tipo;
     protected double valorMensualidad;
     protected double tarifaMinuto;
     protected int minutos;
@@ -24,7 +24,6 @@ public class Vehiculo implements ServicioParqueadero {
     public double getTarifaMinuto()     { return tarifaMinuto; }
     public int getMinutos()             { return minutos; }
 
-    // Puntos del programa de fidelidad: 1 punto por cada $10.000 de mensualidad.
     public int calcularPuntos() {
         return (int) (valorMensualidad / 10000);
     }

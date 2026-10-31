@@ -1,4 +1,4 @@
-public class VehiculoMinutos extends Vehiculo implements AcumulaPuntos { // Paso
+public class VehiculoMinutos extends Vehiculo implements AcumulaPuntos { 
     public VehiculoMinutos(String placa, String propietario, double tarifaMinuto, int minutos) {
         super(placa, propietario, "MINUTOS", 0, tarifaMinuto, minutos);
     }
@@ -8,8 +8,8 @@ public class VehiculoMinutos extends Vehiculo implements AcumulaPuntos { // Paso
         return minutos * tarifaMinuto;
     }
 
-    @Override // Paso
-    public int calcularPuntos() { // Paso
-        return (int) ((minutos * tarifaMinuto) / 10000); // Paso
-    } // Paso
+    @Override
+    public int calcularPuntos() {
+        return (int) ((minutos * tarifaMinuto) / 10000);
+    }
 }

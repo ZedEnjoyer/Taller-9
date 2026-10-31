@@ -13,10 +13,9 @@ public class Main {
         for (Vehiculo v : vehiculos) {
             gestor.cerrarMes(v);
 
-            // Paso: Se verifica si el vehículo acumula puntos de forma segura sin violar LSP
-            if (v instanceof AcumulaPuntos) { // Paso
-                AcumulaPuntos ap = (AcumulaPuntos) v; // Paso
-                System.out.println("Puntos acumulados para " + v.getPlaca() + ": " + ap.calcularPuntos()); // Paso
+            if (v instanceof AcumulaPuntos) {
+                AcumulaPuntos ap = (AcumulaPuntos) v;
+                System.out.println("Puntos acumulados para " + v.getPlaca() + ": " + ap.calcularPuntos());
             } // Paso
         }
         System.out.println(gestor.generarReporteCSV(vehiculos));
